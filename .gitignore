@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------------------
+# Real infrastructure - NEVER commit these.
+# lab_token.txt is your own shared C2-lab token (openssl rand -hex 16).
+# c2_lab.* are build artifacts of build_c2_lab.py that carry YOUR token and
+# YOUR domain baked in. Rebuild them locally; the repo ships placeholders.
+# ---------------------------------------------------------------------------
+lab_token.txt
+c2_lab.cmd
+c2_lab.ps1
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Local dump / lab output
+report/
+received_cookies.jsonl
+
+# Editor / OS cruft
+.vscode/
+.idea/
+.DS_Store

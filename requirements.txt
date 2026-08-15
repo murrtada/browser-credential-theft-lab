@@ -1,0 +1,7 @@
+# Firefox support: pure Python standard library (sqlite3, ctypes, json,
+# configparser). Nothing to pip install for Firefox.
+#
+# Chrome / Chromium / Edge support: requires pycryptodome for AES-GCM / AES-CBC
+# decryption of the Cookies + Login Data databases.
+#   pip install -r requirements.txt
+pycryptodome>=3.19

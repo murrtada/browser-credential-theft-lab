@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "browser-credential-theft-lab"
+version = "1.0.0"
+description = "Educational study tool: dump Firefox / Chrome / Edge cookies and saved logins from your own machine"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "murrtada" }]
+keywords = ["security", "education", "browser", "cookies", "session-hijacking", "ctf"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+]
+
+# Firefox needs zero third-party packages. Chrome/Edge need pycryptodome
+# (see requirements.txt and README.md). Kept as an extra so a base install
+# stays Firefox-only / stdlib-only.
+[project.optional-dependencies]
+chrome = ["pycryptodome>=3.19"]
+
+[project.scripts]
+creds-dumper = "creds_dumper:main"
+
+[tool.setuptools]
+py-modules = ["creds_dumper"]
+packages = ["lib"]
